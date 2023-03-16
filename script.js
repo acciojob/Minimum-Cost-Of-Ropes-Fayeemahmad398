@@ -8,7 +8,10 @@ function calculateMinCost() {
     inputArr[i] = Number(inputArr[i]);
   }
   var cost = 0;
-
+  inputArr.sort(function (a, b) {
+    return a - b;
+  });
+  
   while (inputArr.length > 1) {
     var newRope = inputArr[0] + inputArr[1];
     cost += newRope;
@@ -20,7 +23,7 @@ function calculateMinCost() {
     inputArr.sort(function (a, b) {
       return a - b;
     });
-    
+
     //alert(newRope);
   }
   document.querySelector("#result").textContent = cost;
